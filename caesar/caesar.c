@@ -28,11 +28,14 @@ int main(int argc, string argv[]) {
             //if what was entered is a-z
             if(islower(plainText[i])) {
                 char lowCaesar = (((plainText[i] - 97 + caesar) % 26) + 97);
-                // caesar = (p + k) % 26
+                //start with plain text corresponding ascii value
+                //subtract 97..add caesar value..mod by 26..re-add 97
+                //BAM ---CAESAR CIPHERED!
                     printf("%c", lowCaesar);
             }
             //if what was entered is A-Z
             if(isupper(plainText[i])) {
+                //same as lower case but subtract & add 65
                 char upCaesar = (((plainText[i] - 65 + caesar) % 26) + 65);
                 printf("%c", upCaesar);
             }
@@ -41,6 +44,7 @@ int main(int argc, string argv[]) {
         else if(plainText[i] == ' ') {
             printf("%c", space);
         }
+        //print comma if there is one in entered string
         else if(plainText[i] == ',') {
             printf("%c", comma);
         }
